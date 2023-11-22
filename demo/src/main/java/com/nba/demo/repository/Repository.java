@@ -1,5 +1,5 @@
-package main.java.com.nba.demo.repository;
-import main.java.com.nba.demo.model.*;
+package com.nba.demo.repository;
+import com.nba.demo.model.*;
 
 // import java.util.List;
 

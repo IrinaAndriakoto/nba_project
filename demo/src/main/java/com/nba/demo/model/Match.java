@@ -1,4 +1,4 @@
-package main.java.com.nba.demo.model;
+package com.nba.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +17,7 @@ public class Match {
     int idEquipe2;
 
     public Match(){
-        
+
     }
 
     public int getIdMatch() {

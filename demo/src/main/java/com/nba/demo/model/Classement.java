@@ -1,4 +1,4 @@
-package main.java.com.nba.demo.model;
+package com.nba.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

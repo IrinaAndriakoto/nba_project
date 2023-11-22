@@ -1,10 +1,10 @@
-package main.java.com.nba.demo.model;
+package com.nba.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Joueurs")
@@ -12,8 +12,9 @@ public class Joueurs {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idJoueur;
-
+@Column(name = "nomjoueur")
     String nomJoueur;
+    @Column(name = "idequipe")
     int idEquipe;
 
     public Joueurs(){

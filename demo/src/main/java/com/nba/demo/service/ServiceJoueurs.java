@@ -1,7 +1,7 @@
-package main.java.com.nba.demo.service;
+package com.nba.demo.service;
 
-import main.java.com.nba.demo.repository.Repository;
-import main.java.com.nba.demo.model.*;
+import com.nba.demo.repository.Repository;
+import com.nba.demo.model.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,16 +10,15 @@ import java.util.List;
 
 @Service
 public class ServiceJoueurs {
-    private final Repository rep;
-
     @Autowired
-    public ServiceJoueurs(Repository rep) {
-        this.rep = rep;
-    }
+    Repository rep;
+
 
     //Joueurs
     public List<Joueurs> getAllJoueurs() {
-        return rep.findAll();
+        List<Joueurs> j;
+        j = rep.findAll();
+        return j;
     }
     public Joueurs getJoueursById(Long id){
         return rep.findById(id).orElse(null);

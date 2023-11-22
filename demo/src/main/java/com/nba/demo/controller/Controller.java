@@ -1,32 +1,31 @@
-package main.java.com.nba.demo.controller;
+package com.nba.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import main.java.com.nba.demo.service.*;
-import main.java.com.nba.demo.model.*;;
+import com.nba.demo.service.*;
+import com.nba.demo.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@RestController
+@RestController()
 @RequestMapping("/joueurs")
 public class Controller {
-    private final ServiceJoueurs service;
+    @Autowired
+    ServiceJoueurs service;
 
-    public Controller(ServiceJoueurs service) {
-        this.service = service;
-    }
 
-    @GetMapping("/getJoueurs") // Définissez le chemin de base pour toutes les routes du contrôleur
+    @GetMapping// Définissez le chemin de base pour toutes les routes du contrôleur
     public List<Joueurs> getAllJoueurs() {
         return service.getAllJoueurs();
     }
 
-    @GetMapping("/joueurs/{id}")
+    @GetMapping("/{id}")
     public Joueurs getJoueurs(@PathVariable Long id) {
         return service.getJoueursById(id);
     }
 
-    @PostMapping("/addJoueurs")
+    @PostMapping("/add")
     public Joueurs createJoueurs(@RequestBody Joueurs jou) {
         return service.createJoueurs(jou);
     }
@@ -36,7 +35,7 @@ public class Controller {
     //     return service.updateJoueurs(id, updatedJoueurs);
     // }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void deleteJoueurs(@PathVariable Long id) {
         service.deleteJoueurs(id);
     }
